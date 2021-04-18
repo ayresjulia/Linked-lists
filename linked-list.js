@@ -46,6 +46,12 @@ class LinkedList {
 		if (this.length === 0) this.tail = this.head;
 		this.length++;
 	}
+
+	/** pop(): return & remove last item. */
+
+	pop () {
+		return this.removeAt(this.length - 1);
+	}
 }
 
 module.exports = LinkedList;
