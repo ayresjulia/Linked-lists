@@ -154,6 +154,21 @@ class LinkedList {
 		this.length -= 1;
 		return val;
 	}
+
+	/** average(): return an average of all values in the list */
+
+	average () {
+		let currentNode = this.head;
+		if (!currentNode) return 0;
+
+		let total = 0;
+
+		while (currentNode) {
+			total += currentNode.val;
+			currentNode = currentNode.next;
+		}
+		return total / this.length;
+	}
 }
 
 module.exports = LinkedList;
