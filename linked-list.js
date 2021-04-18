@@ -92,6 +92,31 @@ class LinkedList {
 		let currentNodeObj = this.get(idx);
 		currentNodeObj.val = val;
 	}
+
+	/** insertAt(idx, val): add node w/val before idx. */
+
+	insertAt (idx, val) {
+		// if the list is empty i.e. head = null
+		if (!this.head) {
+			this.head = new Node(val);
+			this.tail = new Node(val);
+			this.length++;
+			return;
+		}
+		// if new node needs to be inserted at the front of the list
+		if (idx === 0) return this.unshift(val);
+
+		// if new node needs to be inserted at the end of the list
+		if (idx === this.length) return this.push(val);
+
+		// use get() to find the previous node and insert at that index
+		const previous = this.get(idx - 1);
+		let newNode = new Node(val);
+		newNode.next = previous.next;
+		previous.next = newNode;
+
+		this.length++;
+	}
 }
 
 module.exports = LinkedList;
