@@ -72,6 +72,19 @@ class LinkedList {
 
 		return currentNode.val;
 	}
+
+	/** get helper function for setAt and insertAt to get Node obj from idx */
+
+	get (idx) {
+		let counter = 0;
+		let currentNode = this.head;
+
+		while (currentNode !== null && counter !== idx) {
+			counter++;
+			currentNode = currentNode.next;
+		}
+		return currentNode;
+	}
 }
 
 module.exports = LinkedList;
