@@ -58,6 +58,20 @@ class LinkedList {
 	shift () {
 		return this.removeAt(0);
 	}
+
+	/** getAt(idx): get val at idx. */
+
+	getAt (idx) {
+		let currentNode = this.head;
+
+		let count = 0;
+		while (currentNode.val !== null && count !== idx) {
+			count++;
+			currentNode = currentNode.next;
+		}
+
+		return currentNode.val;
+	}
 }
 
 module.exports = LinkedList;
