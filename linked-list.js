@@ -85,6 +85,13 @@ class LinkedList {
 		}
 		return currentNode;
 	}
+
+	/** setAt(idx, val): set val at idx to val */
+
+	setAt (idx, val) {
+		let currentNodeObj = this.get(idx);
+		currentNodeObj.val = val;
+	}
 }
 
 module.exports = LinkedList;
